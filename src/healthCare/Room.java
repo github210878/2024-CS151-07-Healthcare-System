@@ -5,6 +5,12 @@ public abstract class Room {
 	int capacity;
 	int currentPopulation;
 	
+	public Room()
+	{
+		capacity = 1;
+		currentPopulation = 0;
+	}
+	
 	public Room(int max)
 	{
 		capacity = max;
