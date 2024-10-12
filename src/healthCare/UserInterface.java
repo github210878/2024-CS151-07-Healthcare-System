@@ -6,17 +6,19 @@ import java.util.ArrayList;
 public class UserInterface {
 	
 	Scanner inputScanner;
-	ArrayList<Hospital> hospitalList;
+	HealthCareSystem healthManager;
 
 	public UserInterface(ArrayList<Hospital> list)
 	{
 		inputScanner = new Scanner(System.in);
-		hospitalList = list;
+		healthManager = new HealthCareSystem(list);
 	}
 	
 	public void welcomeScreen()
 	{
 		System.out.println("Welcome to the Healthcare Network");
+		
+		ArrayList<Hospital> hospitalList = healthManager.hospitalList;
 		
 		while(true)
 		{

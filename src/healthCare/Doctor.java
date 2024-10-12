@@ -37,4 +37,11 @@ public class Doctor extends Staff{
         return "Doctor: " + super.toString() + listOfPatient;
     }
 
+	public Doctor(String name, int age, double salary) {
+		super(name, age, salary);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
 }
