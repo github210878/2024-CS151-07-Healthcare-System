@@ -25,7 +25,12 @@ public class Staff {
      * 
      * @param salary the new salary amount
      */
-    public setSalary(double salary){
+    public void setSalary(double salary){
         this.salary = salary;
+    }
+
+    @Override
+    public String toString(){
+        return "Name: " + this.name + ", " + "Age: " + this.age + ", " + "Salary: " + this.salary;
     }
 }
