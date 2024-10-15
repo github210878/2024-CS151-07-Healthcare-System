@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * 
  * @author Edmond
+ * @author
  */
 public class Doctor extends Staff{
     private ArrayList<Patient> listOfPatient;
@@ -14,19 +15,44 @@ public class Doctor extends Staff{
         this.listOfPatient = new ArrayList<>();
      }
 
-     private void prescribeMedication(Medication medication){
+    /**
+     * 
+     * @param patient
+     * @param medication
+     */
+     private void prescribeMedication(Patient patient, Medication medication){
           
      }
+
+     /**
+      * 
+      * @param doctor
+      */
      private void referral(Doctor doctor){
 
      }
+    /**
+     * 
+     * @param patient
+     */
      private void updateDiagnosis(Patient patient){
 
      }
+     /**
+      * 
+      * @param patient
+      * @return
+      */
      private String removePatient(Patient patient){
           listOfPatient.remove(patient);
           return "Removed" + patient;
      }
+
+     /**
+      * 
+      * @param patient
+      * @return
+      */
      private String admissionOfPatient(Patient patient){
           listOfPatient.add(patient);
           return "Added" + patient;
@@ -36,12 +62,6 @@ public class Doctor extends Staff{
     public String toString(){
         return "Doctor: " + super.toString() + listOfPatient;
     }
-
-	public Doctor(String name, int age, double salary) {
-		super(name, age, salary);
-		// TODO Auto-generated constructor stub
-	}
-	
 	
 
 }
