@@ -67,10 +67,9 @@ public String requestRefill(Patient patient) {
 
 /** 
  * 
- * @param patient  the patient that get the refill 
  */
-public void refillNotification(Patient patient){
-    
+public void refillNotification(){
+
 }
 
 /** 

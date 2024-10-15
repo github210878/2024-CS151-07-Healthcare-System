@@ -15,6 +15,10 @@ public class Doctor extends Staff{
         this.listOfPatient = new ArrayList<>();
      }
 
+    public String getName(){
+        return this.name;
+    }
+
     /**
      * 
      * @param patient
