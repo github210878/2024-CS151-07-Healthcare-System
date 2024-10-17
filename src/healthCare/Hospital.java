@@ -18,7 +18,7 @@ public class Hospital {
 		contactInfo = null;
 	}
 
-	Hospital(String name, string address, string contactInfo) {
+	Hospital(String name, String address, String contactInfo) {
 		this.name = name;
 		this.address = address;
 		this.contactInfo = contactInfo;
