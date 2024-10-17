@@ -11,6 +11,19 @@ public class Hospital {
 	ArrayList<Room> rooms = new ArrayList<Room>();
 	ArrayList<String> reservations = new ArrayList<String>();
 
+	//Constructors
+	Hospital() {
+		name = null;
+		address = null;
+		contactInfo = null;
+	}
+
+	Hospital(String name, string address, string contactInfo) {
+		this.name = name;
+		this.address = address;
+		this.contactInfo = contactInfo;
+	}
+
 	//adds doctor to hospital list
 	//returns true if doctor was added, false if doctor already exists.
 	public boolean addDoctor(Doctor doctor) {
