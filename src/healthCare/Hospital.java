@@ -9,7 +9,7 @@ public class Hospital {
 	private ArrayList<Staff> staff = new ArrayList<Staff>();
 	private ArrayList<Patient> patients = new ArrayList<Patient>();
 	private ArrayList<Room> rooms = new ArrayList<Room>();
-	private ArrayList<String> reservations = new ArrayList<String>();
+	private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
 	//Constructors
 	Hospital() {
@@ -53,6 +53,28 @@ public class Hospital {
 	public boolean removePatient(Patient patient) {
 		if (!patients.contains(patient)) return false;
 		patients.remove(patient);
+		return true;
+	}
+
+	public boolean addReservation(Reservation reservation) {
+		if (reservations.contains(reservation)) return false;
+		reservations.remove(reservation);
+		return true;
+	}
+
+	public boolean removeReservation(Reservation reservation) {
+		if (!reservations.contains(reservation)) return false;
+		reservations.remove(reservation);
+		return true;
+	}
+
+	public void addRoom(Room room) {
+		rooms.add(room);
+	}
+
+	public boolean removeRoom(Room room) {
+		if (!rooms.contains(room)) return false;
+		rooms.remove(room);
 		return true;
 	}
 
