@@ -18,6 +18,9 @@ public Medication(String name, int dosage, int refill, int stockAmount){
     this.refill = refill;
     this.stockAmount = stockAmount;
 }
+
+/* #--- Getter and Setters ---# */ 
+
 /** Getter for the stock amount
  * 
  * @return the amount of medication that is left stock
@@ -26,6 +29,16 @@ public int getStockAmount(){
     return this.stockAmount;
 }
 
+public void setStockAmount(int stock){
+    this.stockAmount = stock;
+}
+
+public String getMedicationName(){
+    return this.name;
+}
+
+/* #--- Medication Methods ---# */
+
 /** Change the dosage amount to new one
  * 
  * @param amount the new dosage amount
@@ -33,7 +46,8 @@ public int getStockAmount(){
 public void changeDosage(int amount){
     this.dosageAmount = amount;
 }
-/**
+
+/** Check if a Medication is below a certain threshold
  * 
  * @param threshold the minimal amount of medication
  * @return
@@ -71,6 +85,7 @@ public String requestRefill(Patient patient) {
 public void refillNotification(){
 
 }
+
 
 /** 
  * 
