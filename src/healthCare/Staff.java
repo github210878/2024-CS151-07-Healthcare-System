@@ -7,30 +7,53 @@ package healthCare;
 public class Staff {
     protected String name;
     protected int age;
-    protected double salary;
 
     /**
      * 
      * @param name  the name of the staff
      * @param age   the age of the staff
-     * @param salary    the amount of money earned
      */
-    public Staff(String name, int age, double salary){
+    public Staff(String name, int age){
         this.name = name;
         this.age = age;
-        this.salary = salary;
     }
 
-    /** Setter for salary
+    /* #--- Getter and Setters ---# */
+
+    /** Name getter
      * 
-     * @param salary the new salary amount
+     * @return staff name
      */
-    public void setSalary(double salary){
-        this.salary = salary;
+    public String getName(){
+        return this.name;
+    }
+
+    /** Name setter
+     * 
+     * @param name the new name
+     */
+    public void setName(String name){
+        this.name = name;
+    }
+
+    /** Age getter
+     * 
+     * @return age of staff
+     */
+    public int getAge(){
+        return this.age;
+    }
+
+    /** Age setter
+     * 
+     * @param age new age of staff
+     */
+    public void setAge(int age){
+        this.age = age;
     }
 
     @Override
     public String toString(){
-        return "Name: " + this.name + ", " + "Age: " + this.age + ", " + "Salary: " + this.salary;
+        return "Name: " + this.name + ", " + "Age: " + this.age;
     }
 }
