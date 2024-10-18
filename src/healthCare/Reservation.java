@@ -2,9 +2,10 @@ package healthCare;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.time.LocalDate;
 
 public class Reservation {
-    private Date date;
+    private LocalDate date;
     private Patient patient;
     private String reason;
     private Doctor doctor;
@@ -13,7 +14,7 @@ public class Reservation {
     private static ArrayList<Reservation> reservations = new ArrayList<>();
 
     // Constructor
-    public Reservation(Date date, Patient patient, String reason, Doctor doctor) {
+    public Reservation(LocalDate date, Patient patient, String reason, Doctor doctor) {
         this.date = date;
         this.patient = patient;
         this.reason = reason;
@@ -25,12 +26,12 @@ public class Reservation {
     }
 
     // Getters and Setters
-    public Date getDate() {
+    public LocalDate getDate() {
 
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
 
         this.date = date;
     }
@@ -47,12 +48,12 @@ public class Reservation {
 
     public String getVisitReason() {
 
-        return visitReason;
+        return this.reason;
     }
 
     public void setVisitReason(String visitReason) {
 
-        this.getVisitReason = visitReason;
+        this.reason = visitReason;
     }
 
     public Doctor getDoctor() {
@@ -71,15 +72,14 @@ public class Reservation {
         System.out.println("Doctor has been changed to: " + doctor.getName());
     }
 
-    public void switchDate(Date date) {
+    public void switchDate(LocalDate date) {
         this.date = date;
         System.out.println("Reservation date has been switched to: " + date);
     }
     public void postpone() {
         // Logic to postpone the reservation date
         // For simplicity, assuming it postpones by one day
-        long currentTime = this.date.getTime();
-        this.date = new Date(currentTime + (1000 * 60 * 60 * 24)); // Adding 1 day to the current date
+        this.date = this.date.plusDays(1); // Adding 1 day to the current date
         System.out.println("Reservation has been postponed to: " + this.date);
     }
 

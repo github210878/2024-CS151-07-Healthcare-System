@@ -36,7 +36,7 @@ public class Doctor extends Staff{
      * @param patient
      * @param medication
      */
-     private void prescribeMedication(Patient patient, Medication medication){
+     public void prescribeMedication(Patient patient, Medication medication){
           patient.addMedication(medication);
      }
 
@@ -44,7 +44,7 @@ public class Doctor extends Staff{
       * 
       * @param patient
       */
-     private void updateDiagnosis(Patient patient, String diagnosis){
+     public void updateDiagnosis(Patient patient, String diagnosis){
         patient.setSick(diagnosis);
      }
      /** Remove one Patient off the list
@@ -52,7 +52,7 @@ public class Doctor extends Staff{
       * @param patient
       * @return message of a patient removed
       */
-     private String removePatient(Patient patient){
+     public String removePatient(Patient patient){
           listOfPatient.remove(patient);
           return "Removed" + patient;
      }
@@ -62,7 +62,7 @@ public class Doctor extends Staff{
       * @param patient
       * @return
       */
-     private String admissionOfPatient(Patient patient){
+     public String admissionOfPatient(Patient patient){
           listOfPatient.add(patient);
           return "Added" + patient;
      }

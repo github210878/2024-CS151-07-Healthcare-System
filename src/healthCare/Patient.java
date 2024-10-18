@@ -1,7 +1,9 @@
 package healthCare;
 
 import java.lang.reflect.Array;
+import java.sql.Date;
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Patient {
     private String name;
@@ -24,6 +26,10 @@ public class Patient {
 
     /* #--- Getter and Setters ---# */ 
 
+    public String getName(){
+        return this.name;
+    }
+
     public ArrayList<Medication> getPatientPrescription(){
         return this.prescription;
     }
@@ -45,17 +51,24 @@ public class Patient {
 
     /** Add a reservation to the list
      * 
-     * @param doctor
+     * @param 
      */
-    public void reserveAppointment(Doctor doctor){
-        
+    public void reserveAppointment(int year, int month, int day, String reason){
+        LocalDate reservedDate = LocalDate.of(year, month, day);
+        Reservation reservation = new Reservation(reservedDate, this, reason, doctor);
+        this.reservationList.add(reservation);
+
     }
 
     /** Remove a reservation from the list
      * 
      */
-    public void cancelReservation(){
-
+    public void cancelReservation(Reservation reservation){
+        for (int i = 0; i < reservationList.size(); i++){
+            if (reservationList.get(i).equals(reservation) == true){
+                reservationList.remove(i);
+            }
+        }
     }
 
     /** Add a medication to the prescription list
