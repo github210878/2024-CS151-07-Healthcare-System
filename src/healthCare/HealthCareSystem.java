@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class HealthCareSystem {
 	
-	ArrayList<Hospital> hospitalList;
+	public ArrayList<Hospital> hospitalList;
 	
 	public HealthCareSystem()
 	{
