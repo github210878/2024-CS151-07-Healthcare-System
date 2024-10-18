@@ -1,51 +1,79 @@
 package healthCare;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Patient {
     private String name;
     private int age;
     private ArrayList<Medication> prescription;
-    private double fees;
     private String sick;
     private boolean refillNoti;
-    private ArrayList<Doctor> doctorList;
+    private Doctor doctor;
+    private ArrayList<Reservation> reservationList;
 
-    public Patient(String name, int age, String sick){
+    public Patient(String name, int age, String sick, Doctor doctor){
         this.name = name;
         this.age = age;
         this.sick = sick;
-        this.fees = 0.00;
         this.refillNoti = false;
+        this.doctor = doctor;
         prescription = new ArrayList<Medication>();
-        doctorList = new ArrayList<Doctor>();
+        reservationList = new ArrayList<Reservation>();
     }
 
-    /**
+    /* #--- Getter and Setters ---# */ 
+
+    public ArrayList<Medication> getPatientPrescription(){
+        return this.prescription;
+    }
+
+    public ArrayList<Reservation> getPatientReservations(){
+        return this.reservationList;
+    }
+
+    public String getSick(){
+        return this.sick;
+
+    }
+
+    public void setSick(String sickness){
+        this.sick = sickness;
+    }
+
+    /* #--- Patient Methods ---# */
+
+    /** Add a reservation to the list
      * 
      * @param doctor
      */
     public void reserveAppointment(Doctor doctor){
-        this.doctorList.add(doctor);
+        
     }
 
+    /** Remove a reservation from the list
+     * 
+     */
+    public void cancelReservation(){
+
+    }
+
+    /** Add a medication to the prescription list
+     * 
+     * @param medication
+     */
+    public void addMedication(Medication medication){
+        this.prescription.add(medication);
+    }
+    
     /**
      * 
      * @param medication
      */
-    public void requestMedication(Medication medication){
-        this.prescription.add(medication);
-    }
-
-    /**
-     * 
-     * @param orginalDoctor
-     * @param newDoctor
-     */
-    public void changeDoctor(Doctor orginalDoctor, Doctor newDoctor){
-        for (int i = 0; i < doctorList.size(); i++){
-            if (doctorList.get(i) == orginalDoctor){
-                doctorList.set(i, newDoctor);
+    public void removeMedication(Medication medication){
+        for (int i = 0; i < prescription.size(); i++){
+            if (prescription.get(i).equals(medication) == true){
+                prescription.remove(i);
             }
         }
     }
@@ -55,19 +83,13 @@ public class Patient {
      * @param medication
      */
     public void refillNoti(Medication medication){
-        medication.refillNotification();
-        if (this.refillNoti == false) {
-            this.refillNoti = true;
-        }
-        else {
-            this.refillNoti = false;
-        }
-    }
-
-    /**
-     * 
-     */
-    public void cancelReservation(){
 
     }
+
+    public String viewProfile(){
+        String profile = this.name + ": age " + this.age + ", sickness: " + this.sick + ", Doctor: " + this.doctor
+        + ", refill noification: " + this.refillNoti;
+        return profile;
+    }
+
 }

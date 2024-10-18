@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class Hospital {
 	
-	String name;
-	String address;
-	String contactInfo;
-	ArrayList<Staff> staff = new ArrayList<Staff>();
-	ArrayList<Patient> patients = new ArrayList<Patient>();
-	ArrayList<Room> rooms = new ArrayList<Room>();
-	ArrayList<String> reservations = new ArrayList<String>();
+	private String name;
+	private String address;
+	private String contactInfo;
+	private ArrayList<Staff> staff = new ArrayList<Staff>();
+	private ArrayList<Patient> patients = new ArrayList<Patient>();
+	private ArrayList<Room> rooms = new ArrayList<Room>();
+	private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
 	//Constructors
 	Hospital() {
@@ -22,6 +22,19 @@ public class Hospital {
 		this.name = name;
 		this.address = address;
 		this.contactInfo = contactInfo;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getContactInfo() {
+		return contactInfo;
 	}
 
 	//adds doctor to hospital list
@@ -56,8 +69,26 @@ public class Hospital {
 		return true;
 	}
 
-	public void transferStaff() {
+	public boolean addReservation(Reservation reservation) {
+		if (reservations.contains(reservation)) return false;
+		reservations.remove(reservation);
+		return true;
+	}
 
+	public boolean removeReservation(Reservation reservation) {
+		if (!reservations.contains(reservation)) return false;
+		reservations.remove(reservation);
+		return true;
+	}
+
+	public void addRoom(Room room) {
+		rooms.add(room);
+	}
+
+	public boolean removeRoom(Room room) {
+		if (!rooms.contains(room)) return false;
+		rooms.remove(room);
+		return true;
 	}
 
 	//returns # of empty rooms

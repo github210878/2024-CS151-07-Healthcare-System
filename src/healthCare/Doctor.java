@@ -10,49 +10,54 @@ import java.util.ArrayList;
 public class Doctor extends Staff{
     private ArrayList<Patient> listOfPatient;
 
-     public Doctor(String name, int age, double salary){
-        super(name, age, salary);
+     public Doctor(String name, int age){
+        super(name, age);
         this.listOfPatient = new ArrayList<>();
      }
 
-    public String getName(){
+    /* #--- Getter and Setters ---# */ 
+    
+    public String getDoctorName(){
         return this.name;
     }
 
-    /**
+    public void setDoctorName(String name){
+        this.name = name;
+    }
+
+    public ArrayList<Patient>  getPatientsList(){
+        return this.listOfPatient;
+    }
+
+    /* #--- Doctor Methods ---# */
+
+    /** Add a prescription for the patient
      * 
      * @param patient
      * @param medication
      */
      private void prescribeMedication(Patient patient, Medication medication){
-          
+          patient.addMedication(medication);
      }
 
-     /**
-      * 
-      * @param doctor
-      */
-     private void referral(Doctor doctor){
-
-     }
-    /**
-     * 
-     * @param patient
-     */
-     private void updateDiagnosis(Patient patient){
-
-     }
-     /**
+     /** Update the diagnosis of the Patient
       * 
       * @param patient
-      * @return
+      */
+     private void updateDiagnosis(Patient patient, String diagnosis){
+        patient.setSick(diagnosis);
+     }
+     /** Remove one Patient off the list
+      * 
+      * @param patient
+      * @return message of a patient removed
       */
      private String removePatient(Patient patient){
           listOfPatient.remove(patient);
           return "Removed" + patient;
      }
 
-     /**
+     /** Add one patient to the list of patient
       * 
       * @param patient
       * @return
