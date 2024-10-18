@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class Hospital {
 	
-	String name;
-	String address;
-	String contactInfo;
-	ArrayList<Staff> staff = new ArrayList<Staff>();
-	ArrayList<Patient> patients = new ArrayList<Patient>();
-	ArrayList<Room> rooms = new ArrayList<Room>();
-	ArrayList<String> reservations = new ArrayList<String>();
+	private String name;
+	private String address;
+	private String contactInfo;
+	private ArrayList<Staff> staff = new ArrayList<Staff>();
+	private ArrayList<Patient> patients = new ArrayList<Patient>();
+	private ArrayList<Room> rooms = new ArrayList<Room>();
+	private ArrayList<String> reservations = new ArrayList<String>();
 
 	//Constructors
 	Hospital() {
@@ -54,10 +54,6 @@ public class Hospital {
 		if (!patients.contains(patient)) return false;
 		patients.remove(patient);
 		return true;
-	}
-
-	public void transferStaff() {
-
 	}
 
 	//returns # of empty rooms
