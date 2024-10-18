@@ -23,6 +23,11 @@ public class Hospital {
 		this.address = address;
 		this.contactInfo = contactInfo;
 	}
+	
+	public String getName()
+	{
+		return name;
+	}
 
 	//adds doctor to hospital list
 	//returns true if doctor was added, false if doctor already exists.
