@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aef24fd4-01ff-40be-a191-248a49144b97" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aef24fd4-01ff-40be-a191-248a49144b97" name="Changes" comment="Added Reservation class">
+      <change beforePath="$PROJECT_DIR$/src/healthCare/ERRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/healthCare/ERRoom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,12 +19,25 @@
       </map>
     </option>
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Added Reservation class">
+      <option name="closed" value="true" />
+      <created>1729209948459</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729209948459</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Reservation class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Reservation class" />
   </component>
 </project>
