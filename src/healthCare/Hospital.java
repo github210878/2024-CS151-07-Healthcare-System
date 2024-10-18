@@ -29,6 +29,14 @@ public class Hospital {
 		return name;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public String getContactInfo() {
+		return contactInfo;
+	}
+
 	//adds doctor to hospital list
 	//returns true if doctor was added, false if doctor already exists.
 	public boolean addDoctor(Doctor doctor) {
