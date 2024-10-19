@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Edmond
  * @author
  */
-public class Doctor extends Staff{
+public class Doctor extends Staff {
     private ArrayList<Patient> listOfPatient;
 
      public Doctor(String name, int age){
@@ -67,7 +67,11 @@ public class Doctor extends Staff{
           return "Added" + patient;
      }
 
-     @Override
+    public String givePrescriptionRefill(Medication medication, int amount, Patient patient){
+        return medication.requestRefill(patient, amount);
+    }
+
+    @Override
     public String toString(){
         return "Doctor: " + super.toString() + listOfPatient;
     }
