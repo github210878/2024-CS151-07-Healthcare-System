@@ -26,7 +26,7 @@ public class HospitalScreen implements screen{
 			inputScanner = new Scanner(System.in);
 			System.out.println("Input 'patient' for the patient page or input 'doctor' for the employee page. At any time type 'back' to go back");
 			
-			input = inputScanner.next();
+			input = inputScanner.nextLine();
 			if(input.equalsIgnoreCase("doctor"))
 			{
 				System.out.println("Type your name");
@@ -44,10 +44,9 @@ public class HospitalScreen implements screen{
 			} else if(input.equalsIgnoreCase("patient"))
 			{
 				System.out.println("Type your name");
-				input = inputScanner.next();
+				input = inputScanner.nextLine();
 				if(hospital.getPatient(input) != null)
 				{
-					inputScanner.close();
 					PatientScreen s = new PatientScreen(hospital.getPatient(input));
 					exit = s.display();
 				} else if(input.equalsIgnoreCase("exit"))
@@ -67,7 +66,6 @@ public class HospitalScreen implements screen{
 				System.out.println("Invalid input, please try again");
 			}
 			
-			inputScanner.close();
 		}
 		
 		
