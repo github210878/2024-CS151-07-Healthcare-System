@@ -132,4 +132,16 @@ public class Hospital {
 		}
 		return count;
 	}
+
+	public int numPatients() {
+		return patients.size();
+	}
+
+	public int numStaff() {
+		return staff.size();
+	}
+
+	public int numReservations() {
+		return reservations.size();
+	}
 }
