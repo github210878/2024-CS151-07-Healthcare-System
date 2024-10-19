@@ -32,7 +32,7 @@ public class UserInterface {
 			
 			for(int i = 1; i <= hospitalList.size(); i++)
 			{
-				System.out.println(i + ": " + hospitalList.get(i-1).name);
+				System.out.println(i + ": " + hospitalList.get(i-1).getName());
 			}
 			
 			System.out.println(hospitalList.size()+1 + ": Create another hospital");
