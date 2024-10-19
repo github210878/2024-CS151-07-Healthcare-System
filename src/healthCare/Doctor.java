@@ -17,12 +17,20 @@ public class Doctor extends Staff {
 
     /* #--- Getter and Setters ---# */ 
     
-    public String getDoctorName(){
+    public String getName(){
         return this.name;
     }
 
-    public void setDoctorName(String name){
+    public void setName(String name){
         this.name = name;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+
+    public void setAge(int age){
+        this.age = age;
     }
 
     public ArrayList<Patient>  getPatientsList(){
@@ -52,9 +60,14 @@ public class Doctor extends Staff {
       * @param patient
       * @return message of a patient removed
       */
-     public String removePatient(Patient patient){
-          listOfPatient.remove(patient);
-          return "Removed" + patient;
+     public void removePatient(Patient patient){
+        if (!listOfPatient.isEmpty()) {
+            for (int i = 0; i < listOfPatient.size(); i++){
+                if (listOfPatient.get(i).equals(patient)) {
+                    listOfPatient.remove(i);
+                }   
+            }
+        }
      }
 
      /** Add one patient to the list of patient
@@ -73,7 +86,7 @@ public class Doctor extends Staff {
 
     @Override
     public String toString(){
-        return "Doctor: " + super.toString() + listOfPatient;
+        return "Doctor: " + super.toString();
     }
 	
 

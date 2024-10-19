@@ -37,6 +37,10 @@ public String getMedicationName(){
     return this.name;
 }
 
+public void setMedicationName(String name){
+    this.name = name;
+}
+
 /* #--- Medication Methods ---# */
 
 /** Change the dosage amount to new one
@@ -80,7 +84,7 @@ public String requestRefill(Patient patient, int amount) {
     }
 }
 
-/** 
+/** The patient got notified and pickup their refill 
  * 
  */
 @Override
@@ -93,7 +97,7 @@ public String refillNoti(){
     }
 }
 
-/** 
+/** Give info about the medication
  * 
  * @return the medication information 
  */
