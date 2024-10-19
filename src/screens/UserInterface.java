@@ -12,12 +12,14 @@ public class UserInterface {
 	Scanner inputScanner;
 	HealthCareSystem healthManager;
 	String inputString;
+	boolean exit;
 
 	public UserInterface(ArrayList<Hospital> list)
 	{
 		inputScanner = new Scanner(System.in);
 		healthManager = new HealthCareSystem(list);
 		inputString = ""; 
+		exit = false;
 	}
 	
 	public void welcomeScreen()
@@ -26,7 +28,7 @@ public class UserInterface {
 		
 		ArrayList<Hospital> hospitalList = healthManager.hospitalList;
 		
-		while(true)
+		while(!exit)
 		{
 			System.out.println("Please choose the Hospital you would like to visit:");
 			
@@ -35,7 +37,6 @@ public class UserInterface {
 				System.out.println(i + ": " + hospitalList.get(i-1).getName());
 			}
 			
-			System.out.println(hospitalList.size()+1 + ": Create another hospital");
 			
 			inputString = inputScanner.next();
 			
@@ -51,15 +52,16 @@ public class UserInterface {
 					if(i == input)
 					{
 						//to be coded --> we add methods accessing selected hospital here
+						HospitalScreen s = new HospitalScreen(hospitalList.get(i-1));
+						inputScanner.close();
+						exit = s.display();
 					}
-				} 
-				if(input == hospitalList.size()+1)
+				}
 				{
-					//to be coded --> create a new hospital here
-				} else
-				{
-					if(inputString.equalsIgnoreCase("exit"))
+					if(inputString.equalsIgnoreCase("exit") || exit)
 					{
+						exit = true;
+						System.out.println("Shutting down");
 						break;
 					}
 					
@@ -70,7 +72,7 @@ public class UserInterface {
 			{
 				if(inputString.equalsIgnoreCase("exit"))
 				{
-					break;
+					exit = true;
 				} else
 				{
 					System.out.println("Invalid input, please try again:");
@@ -84,11 +86,6 @@ public class UserInterface {
 		inputScanner.close();
 		
 		
-		
-	}
-	
-	public void hospitalScreen()
-	{
 		
 	}
 	
