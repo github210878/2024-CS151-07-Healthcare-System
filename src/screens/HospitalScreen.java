@@ -30,6 +30,7 @@ public class HospitalScreen implements screen{
 				input = inputScanner.next();
 				if(hospital.getDoctor(input) != null)
 				{
+					inputScanner.close();
 					DoctorScreen s = new DoctorScreen(hospital.getDoctor(input));
 					exit = s.display();
 				} else if(input.equalsIgnoreCase("exit"))
@@ -40,6 +41,17 @@ public class HospitalScreen implements screen{
 			} else if(input.equalsIgnoreCase("patient"))
 			{
 				System.out.println("Type your name");
+				input = inputScanner.next();
+				if(hospital.getPatient(input) != null)
+				{
+					inputScanner.close();
+					PatientScreen s = new PatientScreen(hospital.getPatient(input));
+					exit = s.display();
+				} else if(input.equalsIgnoreCase("exit"))
+				{
+					exit = true;
+					return true;
+				}
 			} else if(input.equalsIgnoreCase("exit"))
 			{
 				exit = true;
