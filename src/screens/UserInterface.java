@@ -53,7 +53,6 @@ public class UserInterface {
 					{
 						//to be coded --> we add methods accessing selected hospital here
 						HospitalScreen s = new HospitalScreen(hospitalList.get(i-1));
-						inputScanner.close();
 						exit = s.display();
 					}
 				}
