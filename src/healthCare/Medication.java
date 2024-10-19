@@ -19,6 +19,10 @@ public Medication(String name, int dosage, int refill, int stockAmount){
     this.stockAmount = stockAmount;
 }
 
+public Medication() {
+    // Default constructor
+}
+
 /* #--- Getter and Setters ---# */ 
 
 /** Getter for the stock amount
@@ -35,6 +39,10 @@ public void setStockAmount(int stock){
 
 public String getMedicationName(){
     return this.name;
+}
+
+public void setMedicationName(String name){
+    this.name = name;
 }
 
 /* #--- Medication Methods ---# */
@@ -80,7 +88,7 @@ public String requestRefill(Patient patient, int amount) {
     }
 }
 
-/** 
+/** The patient got notified and pickup their refill 
  * 
  */
 @Override
@@ -93,7 +101,7 @@ public String refillNoti(){
     }
 }
 
-/** 
+/** Give info about the medication
  * 
  * @return the medication information 
  */

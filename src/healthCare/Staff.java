@@ -18,6 +18,12 @@ public class Staff {
         this.age = age;
     }
 
+    public Staff() {
+        this.name = "";
+        this.age = 0;
+        // Default constructor
+    }
+
     /* #--- Getter and Setters ---# */
 
     /** Name getter

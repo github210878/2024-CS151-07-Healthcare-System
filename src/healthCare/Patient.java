@@ -23,10 +23,24 @@ public class Patient implements refillNotification{
         reservationList = new ArrayList<Reservation>();
     }
 
+    public Patient() {
+        this.name = "";
+        this.age = 0;
+        // Default constructor
+    }
+
     /* #--- Getter and Setters ---# */ 
 
     public String getName(){
         return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public int getAge(){
+        return this.age;
     }
 
     public ArrayList<Medication> getPatientPrescription(){
@@ -50,6 +64,10 @@ public class Patient implements refillNotification{
         return this.refillNotification;
     }
 
+    public void setRefillNotification(boolean refillNotification){
+        this.refillNotification = refillNotification;
+    }
+
     /* #--- Patient Methods ---# */
 
     /** Add a reservation to the list
@@ -65,24 +83,27 @@ public class Patient implements refillNotification{
 
     /** Remove a reservation from the list
      * 
+     * @param reservation the one reservation that need to be canceled
      */
     public void cancelReservation(Reservation reservation){
-        for (int i = 0; i < reservationList.size(); i++){
-            if (reservationList.get(i).equals(reservation) == true){
-                reservationList.remove(i);
+        if(!reservationList.isEmpty()){
+            for (int i = 0; i < reservationList.size(); i++){
+                if (reservationList.get(i).equals(reservation) == true){
+                    reservationList.remove(i);
+                }
             }
-        }
+        } 
     }
 
     /** Add a medication to the prescription list
      * 
-     * @param medication
+     * @param medication new medication
      */
     public void addMedication(Medication medication){
         this.prescription.add(medication);
     }
     
-    /**
+    /** Remove a prescription from the list
      * 
      * @param medication
      */
@@ -93,10 +114,13 @@ public class Patient implements refillNotification{
             }
         }
     }
-
+    /** A toggle method on the refill notification
+     * 
+     * @return a message on whether the patient have the refill notification turn on or off
+     */
     @Override
     public String refillNoti(){
-        if (refillNotification) {
+        if (refillNotification == true) {
             refillNotification = false;
             return "Notification has been turned off";
         } else {
@@ -105,6 +129,10 @@ public class Patient implements refillNotification{
         }
     }
 
+    /** Give some information about the patient 
+     * 
+     * @return informaton about the patient
+     */
     public String viewProfile(){
         String profile = this.name + ": age " + this.age + ", sickness: " + this.sick + ", Doctor: " + this.doctor
         + ", refill noification: " + this.refillNotification;
