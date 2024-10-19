@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aef24fd4-01ff-40be-a191-248a49144b97" name="Changes" comment="Added Reservation class">
-      <change beforePath="$PROJECT_DIR$/src/healthCare/ERRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/healthCare/ERRoom.java" afterDir="false" />
+    <list default="true" id="aef24fd4-01ff-40be-a191-248a49144b97" name="Changes" comment="updated timeslots">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/healthCare/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/healthCare/Runner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +19,42 @@
         <entry key="$PROJECT_DIR$" value="Huu-Tinh" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2nbEAXuji5huJZeT2x0l1PZkVGo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="2024-CS151-07-Healthcare-System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="2024-CS151-07-Healthcare-System" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Added Reservation class">
       <option name="closed" value="true" />
@@ -33,11 +64,54 @@
       <option name="project" value="LOCAL" />
       <updated>1729209948459</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added some methods to er and appointment room">
+      <option name="closed" value="true" />
+      <created>1729210777268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729210777268</updated>
+    </task>
+    <task id="LOCAL-00003" summary="revised reservation methods">
+      <option name="closed" value="true" />
+      <created>1729232770604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729232770604</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aef24fd4-01ff-40be-a191-248a49144b97" name="Changes" comment="revised reservation methods" />
+      <created>1729233231225</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729233231225</updated>
+    </task>
+    <task id="LOCAL-00004" summary="made a temp interface">
+      <option name="closed" value="true" />
+      <created>1729233579065</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729233579065</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updated timeslots">
+      <option name="closed" value="true" />
+      <created>1729311177382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729311177382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Reservation class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Reservation class" />
+    <MESSAGE value="added some methods to er and appointment room" />
+    <MESSAGE value="revised reservation methods" />
+    <MESSAGE value="made a temp interface" />
+    <MESSAGE value="updated timeslots" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated timeslots" />
   </component>
 </project>
