@@ -13,7 +13,7 @@ public class HospitalScreen implements screen{
 	public HospitalScreen(Hospital h)
 	{
 		hospital = h;
-		inputScanner = new Scanner(System.in);
+		
 	}
 	
 	public boolean display()
@@ -22,7 +22,10 @@ public class HospitalScreen implements screen{
 		boolean exit = false;
 		while(!exit)
 		{
-			System.out.println("Are you a doctor or patient? Type 'back' to go back");
+			
+			inputScanner = new Scanner(System.in);
+			System.out.println("Input 'patient' for the patient page or input 'doctor' for the employee page. At any time type 'back' to go back");
+			
 			input = inputScanner.next();
 			if(input.equalsIgnoreCase("doctor"))
 			{
@@ -63,6 +66,8 @@ public class HospitalScreen implements screen{
 			{
 				System.out.println("Invalid input, please try again");
 			}
+			
+			inputScanner.close();
 		}
 		
 		
