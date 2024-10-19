@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class PatientScreen implements screen {
 
-	private Patient patient;
-	private Scanner scanner;
+	Patient patient;
+	Scanner scanner;
 
 	public PatientScreen(Patient p) {
 		patient = p;
@@ -34,7 +34,7 @@ public class PatientScreen implements screen {
 
 			}
 		}
-		return exit;
+		return true;
 	}
 }
 		
