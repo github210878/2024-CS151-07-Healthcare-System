@@ -52,6 +52,21 @@ public class Hospital {
 		staff.remove(doctor);
 		return true;
 	}
+	
+	//Returns staff member with specified name
+	//if no such name is found, returns null
+	public Doctor getDoctor(String name)
+	{
+		for(Staff d : staff)
+		{
+			if(d.name.equalsIgnoreCase(name))
+			{
+				return (Doctor)d;
+			}
+		}
+		
+		return null;
+	}
 
 	//adds patient to hospital list
 	//returns true if patient was added, false if patient already exists.
@@ -68,6 +83,22 @@ public class Hospital {
 		patients.remove(patient);
 		return true;
 	}
+	
+	//Returns patient with specified name
+	//if no such name is found, returns null
+	public Patient getPatient(String name)
+	{
+		for(Patient d : patients)
+		{
+			if(d.getName().equalsIgnoreCase(name))
+			{
+				return d;
+			}
+		}
+		
+		return null;
+	}
+	
 
 	public boolean addReservation(Reservation reservation) {
 		if (reservations.contains(reservation)) return false;
