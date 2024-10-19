@@ -23,6 +23,12 @@ public class Patient implements refillNotification{
         reservationList = new ArrayList<Reservation>();
     }
 
+    public Patient() {
+        this.name = "";
+        this.age = 0;
+        // Default constructor
+    }
+
     /* #--- Getter and Setters ---# */ 
 
     public String getName(){

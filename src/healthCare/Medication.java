@@ -19,6 +19,10 @@ public Medication(String name, int dosage, int refill, int stockAmount){
     this.stockAmount = stockAmount;
 }
 
+public Medication() {
+    // Default constructor
+}
+
 /* #--- Getter and Setters ---# */ 
 
 /** Getter for the stock amount

@@ -14,6 +14,12 @@ public class Doctor extends Staff {
         super(name, age);
         this.listOfPatient = new ArrayList<>();
      }
+    
+     public Doctor() {
+        this.name = "";
+        this.age = 0;
+        // Default constructor
+    }
 
     /* #--- Getter and Setters ---# */ 
     
