@@ -38,6 +38,11 @@ public class Patient implements refillNotification{
     public void setName(String name){
         this.name = name;
     }
+    
+    public Doctor getDoctor()
+    {
+    	return doctor;
+    }
 
     public int getAge(){
         return this.age;

@@ -16,6 +16,7 @@ public class Doctor extends Staff {
      }
     
      public Doctor() {
+    	 super();
         this.name = "";
         this.age = 0;
         // Default constructor

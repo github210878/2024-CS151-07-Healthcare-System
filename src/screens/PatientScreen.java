@@ -31,7 +31,7 @@ public class PatientScreen implements screen{
 			
 			System.out.println("Hello " + patient.getName() + ", How can we help you?");
 			System.out.println("Type 'Prescription' to check prescription status");
-			System.out.println("Type 'Profile' to view your profile");
+			System.out.println("Type 'Doctor' to view your Doctor's contact information to set up an appointment");
 			
 			System.out.println("Type 'Back' to go back");
 			
@@ -51,9 +51,9 @@ public class PatientScreen implements screen{
 						System.out.println(m.medicationInfo());
 					}
 				}
-			} else if(input.equalsIgnoreCase("profile"))
+			} else if(input.equalsIgnoreCase("doctor"))
 			{
-				System.out.println(patient.viewProfile());
+				System.out.println("Doctor: Dr. " + patient.getDoctor().getName());
 			} else if(input.equalsIgnoreCase("exit"))
 			{
 				return true;
