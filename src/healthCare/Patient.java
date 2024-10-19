@@ -1,16 +1,15 @@
 package healthCare;
 
-import java.lang.reflect.Array;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.time.LocalDate;
 
-public class Patient {
+public class Patient implements refillNotification{
     private String name;
     private int age;
     private ArrayList<Medication> prescription;
     private String sick;
-    private boolean refillNoti;
+    private boolean refillNotification;
     private Doctor doctor;
     private ArrayList<Reservation> reservationList;
 
@@ -18,7 +17,7 @@ public class Patient {
         this.name = name;
         this.age = age;
         this.sick = sick;
-        this.refillNoti = false;
+        this.refillNotification = false;
         this.doctor = doctor;
         prescription = new ArrayList<Medication>();
         reservationList = new ArrayList<Reservation>();
@@ -45,6 +44,10 @@ public class Patient {
 
     public void setSick(String sickness){
         this.sick = sickness;
+    }
+
+    public boolean getRefillNotification(){
+        return this.refillNotification;
     }
 
     /* #--- Patient Methods ---# */
@@ -91,17 +94,20 @@ public class Patient {
         }
     }
 
-    /**
-     * 
-     * @param medication
-     */
-    public void refillNoti(Medication medication){
-
+    @Override
+    public String refillNoti(){
+        if (refillNotification) {
+            refillNotification = false;
+            return "Notification has been turned off";
+        } else {
+            refillNotification = true;
+            return "We will notify you for your next refill";
+        }
     }
 
     public String viewProfile(){
         String profile = this.name + ": age " + this.age + ", sickness: " + this.sick + ", Doctor: " + this.doctor
-        + ", refill noification: " + this.refillNoti;
+        + ", refill noification: " + this.refillNotification;
         return profile;
     }
 

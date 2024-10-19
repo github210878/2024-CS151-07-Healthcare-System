@@ -5,7 +5,7 @@ package healthCare;
  * @author Edmond Li
  * @author
  */
-public class Medication {
+public class Medication implements refillNotification{
 
 private String name;
 private int dosageAmount;
@@ -61,7 +61,7 @@ public boolean isLowOnStock(int threshold) {
  * @param amount the amount of refill that need to be added
  * @return refill add message
  */
-public String addRefill(int amount){
+private String addRefill(int amount){
     this.refill += amount;
     return amount + " refill added";
 }
@@ -70,10 +70,11 @@ public String addRefill(int amount){
  * 
  * @return The amount of refill available 
  */
-public String requestRefill(Patient patient) {
-    if (this.refill > 0) {
-        this.refill--;
-        return "Refill requested for " + this.name + ", " + this.refill + "left.";
+public String requestRefill(Patient patient, int amount) {
+    if (this.stockAmount - amount > 0) {
+        stockAmount -= amount;
+        this.addRefill(amount);
+        return "Refill requested for " + patient.getName() + ", " + this.stockAmount + "left.";
     } else {
         return "No refills available for " + this.name + ".";
     }
@@ -82,10 +83,15 @@ public String requestRefill(Patient patient) {
 /** 
  * 
  */
-public void refillNotification(){
-
+@Override
+public String refillNoti(){
+    if (this.refill > 0) {
+        this.refill -= 1;
+        return "Thank you for picking up your refill! We will notify you for the next refill.";
+    } else {
+        return "Sorry, no more refills available for " + this.name + ".";
+    }
 }
-
 
 /** 
  * 
