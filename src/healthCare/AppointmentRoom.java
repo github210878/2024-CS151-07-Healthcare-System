@@ -27,14 +27,33 @@ public class AppointmentRoom extends Room {
 		initializeTimeSlots();
 	}
 
-	// Initialize the default available time slots
+	// Initialize the default available time slots 24 hours
 	private void initializeTimeSlots() {
+		this.availableTimeSlots.add("11:00 PM - 12:00 AM");
+		this.availableTimeSlots.add("12:00 AM - 1:00 AM");
+		this.availableTimeSlots.add("1:00 AM - 2:00 AM");
+		this.availableTimeSlots.add("2:00 AM - 3:00 AM");
+		this.availableTimeSlots.add("3:00 AM - 4:00 AM");
+		this.availableTimeSlots.add("4:00 AM - 5:00 AM");
+		this.availableTimeSlots.add("5:00 AM - 6:00 AM");
+		this.availableTimeSlots.add("6:00 AM - 7:00 AM");
+		this.availableTimeSlots.add("7:00 AM - 8:00 AM");
+		this.availableTimeSlots.add("8:00 AM - 9:00 AM");
 		this.availableTimeSlots.add("9:00 AM - 10:00 AM");
-		this.availableTimeSlots.add("");
-		this.availableTimeSlots.add("");
-		this.availableTimeSlots.add("");
-		this.availableTimeSlots.add("");
-		this.availableTimeSlots.add("");
+		this.availableTimeSlots.add("10:00 AM - 11:00 AM");
+		this.availableTimeSlots.add("11:00 AM - 12:00 PM");
+		this.availableTimeSlots.add("12:00 PM - 1:00 PM");
+		this.availableTimeSlots.add("1:00 PM - 2:00 PM");
+		this.availableTimeSlots.add("2:00 PM - 3:00 PM");
+		this.availableTimeSlots.add("3:00 PM - 4:00 PM");
+		this.availableTimeSlots.add("4:00 PM - 5:00 PM");
+		this.availableTimeSlots.add("5:00 PM - 6:00 PM");
+		this.availableTimeSlots.add("6:00 PM - 7:00 PM");
+		this.availableTimeSlots.add("7:00 PM - 8:00 PM");
+		this.availableTimeSlots.add("8:00 PM - 9:00 PM");
+		this.availableTimeSlots.add("9:00 PM - 10:00 PM");
+		this.availableTimeSlots.add("10:00 PM - 11:00 PM");
+
 	}
 
 	// Method to schedule an appointment
