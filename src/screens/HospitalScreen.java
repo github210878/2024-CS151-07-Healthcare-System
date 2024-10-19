@@ -30,10 +30,12 @@ public class HospitalScreen implements screen{
 				input = inputScanner.next();
 				if(hospital.getDoctor(input) != null)
 				{
-					
-				} else
+					DoctorScreen s = new DoctorScreen(hospital.getDoctor(input));
+					exit = s.display();
+				} else if(input.equalsIgnoreCase("exit"))
 				{
-					System.out.println("Invalid input, please try again");
+					exit = true;
+					return true;
 				}
 			} else if(input.equalsIgnoreCase("patient"))
 			{
@@ -41,9 +43,10 @@ public class HospitalScreen implements screen{
 			} else if(input.equalsIgnoreCase("exit"))
 			{
 				exit = true;
+				
 			} else if(input.equalsIgnoreCase("back"))
 			{
-				return true;
+				return false;
 			}else
 			{
 				System.out.println("Invalid input, please try again");
@@ -53,7 +56,7 @@ public class HospitalScreen implements screen{
 		
 		
 		
-		return false;
+		return true;
 		
 	}
 	
