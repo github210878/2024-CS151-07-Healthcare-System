@@ -72,6 +72,7 @@ public class Doctor extends Staff {
             for (int i = 0; i < listOfPatient.size(); i++){
                 if (listOfPatient.get(i).equals(patient)) {
                     listOfPatient.remove(i);
+                    return; // Stop once we find and remove the patient
                 }   
             }
         }
@@ -82,9 +83,8 @@ public class Doctor extends Staff {
       * @param patient
       * @return
       */
-     public String admissionOfPatient(Patient patient){
-          listOfPatient.add(patient);
-          return "Added" + patient;
+     public void addPatient(Patient patient) {
+    	 listOfPatient.add(patient);
      }
 
     public String givePrescriptionRefill(Medication medication, int amount, Patient patient){
@@ -93,7 +93,7 @@ public class Doctor extends Staff {
 
     @Override
     public String toString(){
-        return "Doctor: " + super.toString();
+        return "Doctor: " + super.toString() + ", Patients: " + listOfPatient.size();
     }
 	
 
