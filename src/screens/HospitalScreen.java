@@ -31,34 +31,37 @@ public class HospitalScreen implements screen{
 			System.out.println("5. Add New Reservation");
 			System.out.println("Type 'back' to go back or 'exit' to exit.");
 			
-			String input = inputScanner.nextLine();
-			
-			switch (input.toLowerCase()) {
-				case "1":
-					accessDoctorPage();
-					break;
-				case "2":
-					accessPatientPage();
-					break;
-				case "3":
-					addNewDoctor();
-					break;
-				case "4":
-					addNewPatient();
-					break;
-				case "5":
-					addNewReservation();
-					break;
-				case "back":
-					return false;
-				case "exit":
-					exit = true;
-					break;
-				default:
-					System.out.println("Invalid input, please try again.");
-			}
-		}
-		return true;
+			String input = inputScanner.nextLine().trim();
+        
+        // Only show "Invalid input" if the input isn't "back" or "exit"
+        if (input.equalsIgnoreCase("back")) {
+            return false;
+        } else if (input.equalsIgnoreCase("exit")) {
+            exit = true;
+        } else {
+            switch (input) {
+                case "1":
+                    accessDoctorPage();
+                    break;
+                case "2":
+                    accessPatientPage();
+                    break;
+                case "3":
+                    addNewDoctor();
+                    break;
+                case "4":
+                    addNewPatient();
+                    break;
+                case "5":
+                    addNewReservation();
+                    break;
+                default:
+                    System.out.println("Invalid input, please try again.");
+                    break;
+            }
+        }
+    }
+    return true;
 	}
 	
 	private void accessDoctorPage() {
