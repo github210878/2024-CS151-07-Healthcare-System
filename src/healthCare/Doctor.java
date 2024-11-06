@@ -8,6 +8,9 @@ import java.util.ArrayList;
  * @author
  */
 public class Doctor extends Staff {
+
+    private String contact;
+    private String schedule;
     private ArrayList<Patient> listOfPatient;
 
      public Doctor(String name, int age){
@@ -40,12 +43,37 @@ public class Doctor extends Staff {
         this.age = age;
     }
 
+    public String getContact() {
+        return this.contact;
+    }
+    
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getSchedule() {
+        return this.schedule;
+    }
+    
+    public void updateSchedule(String schedule) {
+        this.schedule = schedule;
+    }
+
     public ArrayList<Patient>  getPatientsList(){
         return this.listOfPatient;
     }
 
     /* #--- Doctor Methods ---# */
 
+    public Patient getPatient(String patientName) {
+        for (Patient patient : listOfPatient) {
+            if (patient.getName().equalsIgnoreCase(patientName)) {
+                return patient;
+            }
+        }
+        return null; // Return null if the patient is not found
+    }
+    
     /** Add a prescription for the patient
      * 
      * @param patient

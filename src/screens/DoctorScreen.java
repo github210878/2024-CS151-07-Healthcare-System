@@ -69,4 +69,25 @@ public class DoctorScreen implements screen{
             }
         }
     }
+
+	// Method to update schedule
+	private void updateSchedule() {
+        System.out.println("Current Schedule: " + doctor.getSchedule());
+        System.out.println("Enter new schedule (or type 'cancel' to keep current schedule):");
+        String schedule = scanner.nextLine();
+        if (!schedule.equalsIgnoreCase("cancel")) {
+            doctor.updateSchedule(schedule);
+            System.out.println("Schedule updated.");
+        } else {
+            System.out.println("Schedule unchanged.");
+        }
+    }
+
+	//Method to update contact information
+    private void updateContactInfo() {
+        System.out.println("Enter your new contact details:");
+        String newContact = scanner.nextLine();
+        doctor.setContact(newContact); // Assuming `setContact` method is implemented in Doctor class
+        System.out.println("Contact updated.");
+    }
 }
